@@ -10,9 +10,9 @@ using System.Threading.Tasks;
 
 namespace ServiceWrapper
 {
-    public partial class Service1 : ServiceBase
+    public partial class WrapperService : ServiceBase
     {
-        public Service1()
+        public WrapperService()
         {
             InitializeComponent();
         }
