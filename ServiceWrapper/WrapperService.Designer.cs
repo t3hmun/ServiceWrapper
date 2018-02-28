@@ -1,4 +1,4 @@
-﻿namespace ServiceWrapper
+﻿namespace t3h.ServiceWrapper
 {
     partial class WrapperService
     {

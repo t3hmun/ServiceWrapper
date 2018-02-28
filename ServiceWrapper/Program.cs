@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 
 namespace ServiceWrapper
 {
+    using t3h.ServiceWrapper;
+
     static class Program
     {
         /// <summary>
