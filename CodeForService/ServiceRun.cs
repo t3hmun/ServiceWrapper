@@ -1,4 +1,4 @@
-﻿namespace CodeForService
+﻿namespace t3h.CodeForService
 {
     using System.Threading;
     using Serilog;
@@ -13,11 +13,17 @@
         public ServiceRun(ILogger logger = null)
         {
             if (logger == null)
+            {
                 Log.Logger = new LoggerConfiguration()
                     .WriteTo.Console()
                     .CreateLogger();
+                _logger = Log.Logger;
+            }
             else
+            {
                 _logger = logger.ForContext<ServiceRun>();
+            }
+
             _logger.Debug("Hello from ServiceRun ctor.");
         }
 

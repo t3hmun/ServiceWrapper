@@ -3,12 +3,14 @@
     using System.Configuration;
     using System.IO;
     using System.ServiceProcess;
+    using CodeForService;
     using Serilog;
     using Serilog.Events;
 
     public partial class WrapperService : ServiceBase
     {
         private readonly ILogger _logger;
+        private readonly ServiceRun _serviceRunner;
 
         public WrapperService()
         {
@@ -30,11 +32,13 @@
             Log.Logger = new LoggerConfiguration()
                 .WriteTo.File(logFilePath, logLevel, rollingInterval: RollingInterval.Day)
                 .CreateLogger();
+
             _logger = Log.Logger.ForContext<WrapperService>();
 
             _logger.Information("Service Intitialising...");
 
             // Init the main class of your service here.
+            _serviceRunner = new ServiceRun(Log.Logger);
 
             _logger.Information("...service Intitialised.");
         }
@@ -44,6 +48,7 @@
             _logger.Information("Service starting...");
 
             // Start the main process of your service here.
+            _serviceRunner.Start();
 
             _logger.Information("...service started.");
         }
@@ -53,6 +58,7 @@
             _logger.Information("Service stopping...");
 
             // Shutdown code for your service here.
+            _serviceRunner.Stop();
 
             _logger.Information("...service stopped.");
         }

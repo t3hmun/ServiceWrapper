@@ -1,7 +1,7 @@
-﻿namespace ServiceWrapper
+﻿namespace t3h.ServiceWrapper
 {
-    using System.ServiceProcess;
-    using t3h.ServiceWrapper;
+    using System;
+    using CodeForService;
 
     internal static class Program
     {
@@ -10,12 +10,23 @@
         /// </summary>
         private static void Main()
         {
-            ServiceBase[] ServicesToRun;
-            ServicesToRun = new ServiceBase[]
+#if DEBUG
+            var serviceRun = new ServiceRun();
+            serviceRun.Start();
+            while (!Console.KeyAvailable)
+            {
+                
+            }
+            serviceRun.Stop();
+            Console.WriteLine(@"bye bye");
+
+#else
+            var servicesToRun = new ServiceBase[]
             {
                 new WrapperService()
             };
-            ServiceBase.Run(ServicesToRun);
+            ServiceBase.Run(servicesToRun);
+#endif
         }
     }
 }

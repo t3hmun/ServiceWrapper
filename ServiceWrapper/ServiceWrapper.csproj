@@ -87,5 +87,11 @@
     <Content Include="STEP-1.png" />
     <Content Include="STEP-2.png" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CodeForService\CodeForService.csproj">
+      <Project>{0799AC29-F3C0-4A28-B715-7956C9F5E679}</Project>
+      <Name>CodeForService</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

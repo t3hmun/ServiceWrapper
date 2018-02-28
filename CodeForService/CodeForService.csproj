@@ -7,8 +7,8 @@
     <ProjectGuid>{0799AC29-F3C0-4A28-B715-7956C9F5E679}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CodeForService</RootNamespace>
-    <AssemblyName>CodeForService</AssemblyName>
+    <RootNamespace>t3h.CodeForService</RootNamespace>
+    <AssemblyName>t3h.CodeForService</AssemblyName>
     <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -46,7 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="ServiceRun.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
